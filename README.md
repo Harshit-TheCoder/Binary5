@@ -238,5 +238,5 @@ Triggers are **data-driven and automated**:
 - Harshit Harlalka  
 - Ishan Goel
 - Anushka Priyadarshi
-- Ishan Goel
+- Karan Dhillon
 - Shreya Samal
