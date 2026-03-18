@@ -358,8 +358,8 @@ Triggers are **data-driven and automated**:
 ---
 
 ## 👨‍💻 Team
-- Harshit Harlalka  
-- Ishan Goel
-- Anushka Priyadarshi
-- Karan Dhillon
-- Shreya Samal
+- Harshit Harlalka - RA2311026011055
+- Ishan Goel - RA2311003010156
+- Anushka Priyadarshi - RA2311003011986
+- Karan Dhillon - RA2311026010156
+- Shreya Samal - RA2311026010883
