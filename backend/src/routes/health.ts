@@ -1,10 +1,19 @@
 import { Router, Request, Response } from 'express';
+import rateLimit from 'express-rate-limit';
 import pool from '../config/db';
+
+const healthRateLimit = rateLimit({
+  windowMs: 60 * 1000,
+  max: 30,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: 'Too many requests, please try again later.' },
+});
 
 const router = Router();
 
 // GET /health
-router.get('/', async (_req: Request, res: Response) => {
+router.get('/', healthRateLimit, async (_req: Request, res: Response) => {
   let dbStatus = 'ok';
   let dbLatencyMs = 0;
 
