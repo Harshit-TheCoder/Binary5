@@ -19,6 +19,30 @@ To design a **weekly subscription-based insurance system** that:
 
 ---
 
+## 🏗️ System Architecture
+
+<p align="center">
+  <img src="assets/architecture.jpeg" width="900"/>
+</p>
+
+---
+
+## 🔄 Execution Flow
+
+<p align="center">
+  <img src="assets/sequence.jpeg" width="900"/>
+</p>
+
+---
+
+## 💰 Business Model
+
+<p align="center">
+  <img src="assets/business.jpeg" width="800"/>
+</p>
+
+---
+
 ## 👤 Target Persona
 
 ### 👨‍🍳 Food Delivery Partner
