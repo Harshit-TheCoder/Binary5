@@ -28,7 +28,9 @@ router.post(
   [
     body('name').trim().notEmpty().withMessage('Name is required'),
     body('phone').trim().notEmpty().isMobilePhone('any').withMessage('Valid phone is required'),
-    body('aadhaar').trim().isLength({ min: 12, max: 12 }).isNumeric().withMessage('Aadhaar must be 12 digits'),
+    // Aadhaar: exactly 12 numeric digits (no spaces/hyphens). Leading zeros are valid.
+    // The value is SHA-256 hashed before storage and never returned in responses.
+    body('aadhaar').trim().isLength({ min: 12, max: 12 }).isNumeric().withMessage('Aadhaar must be 12 numeric digits'),
     body('platform').isIn(['swiggy', 'zomato', 'blinkit', 'zepto', 'dunzo', 'other']).withMessage('Invalid platform'),
     body('city').trim().notEmpty().withMessage('City is required'),
     body('zone').trim().notEmpty().withMessage('Zone is required'),

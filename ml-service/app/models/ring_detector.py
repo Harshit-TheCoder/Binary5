@@ -25,7 +25,7 @@ _active_alerts: list[RingAlert] = []
 
 
 def _fp_hash(fp: dict[str, Any]) -> str:
-    """Deterministic short hash of OS + screen_resolution + carrier fields (non-cryptographic)."""
+    """Deterministic short hash of OS + screen_resolution + carrier fields (non-cryptographic bucketing)."""
     key = "|".join(
         [
             str(fp.get("os", "")),
@@ -33,7 +33,7 @@ def _fp_hash(fp: dict[str, Any]) -> str:
             str(fp.get("carrier", "")),
         ]
     )
-    return hashlib.md5(key.encode()).hexdigest()[:8]  # noqa: S324
+    return hashlib.sha256(key.encode()).hexdigest()[:8]
 
 
 def _ip_subnet(ip_str: str) -> str | None:

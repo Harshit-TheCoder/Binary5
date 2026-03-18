@@ -309,8 +309,10 @@ router.post(
         return next(createError(`Claim is in '${claim.status}' status — OTP verification not applicable`, 400));
       }
 
-      // In production, validate OTP against stored value.
-      // Mock: any 4-digit OTP starting with '1' is valid for testing.
+      // MOCK IMPLEMENTATION: In production, validate OTP against a time-limited value
+      // stored (e.g. in Redis) when the fast_verify status was set. The OTP would be
+      // sent via SMS to the worker's registered phone number.
+      // Current mock: accepts any numeric string of 4+ digits.
       const otp = String(req.body.otp);
       const isValid = otp.length >= 4 && /^\d+$/.test(otp);
 

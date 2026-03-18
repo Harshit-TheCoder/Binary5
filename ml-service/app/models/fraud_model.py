@@ -86,7 +86,8 @@ def _ip_to_mock_location(ip: str) -> dict[str, Any]:
         lat = (bounds[0] + bounds[1]) / 2
         lng = (bounds[2] + bounds[3]) / 2
         return {"city": city, "lat": lat, "lng": lng, "status": "success"}
-    except Exception:
+    except Exception as exc:
+        logger.warning("IP geolocation failed for %r: %s", ip, exc)
         return {"city": None, "lat": None, "lng": None, "status": "error"}
 
 

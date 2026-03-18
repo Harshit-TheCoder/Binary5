@@ -13,12 +13,16 @@ export interface PaymentResult {
   error?: string;
 }
 
+// Configurable failure rate for the mock payment gateway (0–1).
+// Set MOCK_PAYMENT_FAILURE_RATE=0 in .env to disable failures during testing.
+const MOCK_PAYMENT_FAILURE_RATE = parseFloat(process.env['MOCK_PAYMENT_FAILURE_RATE'] ?? '0.02');
+
 export async function processPayment(request: PaymentRequest): Promise<PaymentResult> {
   // Simulate network latency
   await new Promise((resolve) => setTimeout(resolve, 100 + Math.random() * 200));
 
-  // Mock always succeeds; a 2% failure rate is simulated for realism
-  const shouldFail = Math.random() < 0.02;
+  // Simulate occasional gateway failures for realism
+  const shouldFail = Math.random() < MOCK_PAYMENT_FAILURE_RATE;
 
   if (shouldFail) {
     return {
