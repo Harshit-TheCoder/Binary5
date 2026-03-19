@@ -21,20 +21,23 @@
 
 ---
 
-
 ## The Problem
-
-India's q-commerce delivery workers (Zepto, Blinkit, Swiggy Instamart) operate on razor-thin margins with zero safety net. A single disruption — a flash flood in Koramangala, a sudden zone curfew, or a severe AQI spike — can wipe out **20–30% of their weekly income** overnight.
+India's 2M q-commerce riders (Zepto, Blinkit, Swiggy Instamart) live paycheck-to-paycheck. One flood, curfew, or AQI spike wipes out 20-30% of their weekly earnings. No backup exists.
 
 When orders stop, earnings stop. There is no employer backup, no union protection, and no insurance product designed for their reality.
 
-**Q-Shield changes that.**
-
+<p align="center">
+  <img width="856" height="384" alt="Screenshot 2026-03-19 at 10 24 05 PM" src="https://github.com/user-attachments/assets/1abb22ba-d7cb-482a-b46a-76de916c4679" />
+</p>
+ 
+ **The Opportunity:** 2M q-commerce workers × ₹100/week premium = ₹10,400Cr annual market
+ 
 ---
-
 ## Our Persona
 
 ### Arjun, 26 — Zepto Delivery Partner, Bengaluru
+
+<div align="center">
 
 | Attribute | Detail |
 |-----------|--------|
@@ -45,7 +48,10 @@ When orders stop, earnings stop. There is no employer backup, no union protectio
 | Vehicle | Electric two-wheeler |
 | Risk Exposure | Bengaluru monsoon floods, traffic lockdowns, AQI spikes (Oct–Nov) |
 
+</div>
+
 **The scenario that breaks Arjun:**
+
 It's a Tuesday evening in July. Heavy rain triggers a red alert in 3 zones. Orders are suspended by the platform. Arjun loses ₹800–₹1,200 that day — with no recourse. This happens 6–8 times per monsoon season. Q-Shield pays out automatically, within minutes, with no claim form required.
 
 ---
@@ -69,26 +75,92 @@ Premiums are structured on a **weekly basis** to match the typical earnings cycl
 
 ### Base Premium Table
 
-| Coverage Tier | Weekly Premium | Max Weekly Payout | Best For |
-|--------------|---------------|-------------------|----------|
-| Basic Shield | ₹35/week | ₹500 | Part-time workers (<5 hrs/day) |
-| Standard Shield | ₹65/week | ₹1,000 | Regular workers (5–8 hrs/day) |
-| Pro Shield | ₹99/week | ₹1,800 | Full-time workers (8+ hrs/day) |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th style="padding:8px; border:1px solid #ddd;">Coverage Tier</th>
+      <th style="padding:8px; border:1px solid #ddd;">Weekly Premium</th>
+      <th style="padding:8px; border:1px solid #ddd;">Max Weekly Payout</th>
+      <th style="padding:8px; border:1px solid #ddd;">Best For</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Basic Shield</td>
+      <td style="padding:8px; border:1px solid #ddd;">₹35/week</td>
+      <td style="padding:8px; border:1px solid #ddd;">₹500</td>
+      <td style="padding:8px; border:1px solid #ddd;">Part-time workers (&lt;5 hrs/day)</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Standard Shield</td>
+      <td style="padding:8px; border:1px solid #ddd;">₹65/week</td>
+      <td style="padding:8px; border:1px solid #ddd;">₹1,000</td>
+      <td style="padding:8px; border:1px solid #ddd;">Regular workers (5–8 hrs/day)</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Pro Shield</td>
+      <td style="padding:8px; border:1px solid #ddd;">₹99/week</td>
+      <td style="padding:8px; border:1px solid #ddd;">₹1,800</td>
+      <td style="padding:8px; border:1px solid #ddd;">Full-time workers (8+ hrs/day)</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 ### Dynamic Risk Multipliers (AI-Adjusted)
 
 The base premium is adjusted weekly by our ML risk engine based on:
 
-| Risk Factor | Adjustment | Rationale |
-|-------------|-----------|-----------|
-| Monsoon season (Jun–Sep) | +15% | Higher disruption probability |
-| Worker's zone has flood history | +10% | Zone-level historical risk |
-| Worker's zone is flood-safe | -8% | Reward low-risk zones |
-| New worker (< 4 weeks) | +5% | Limited behavioral baseline |
-| Worker with 0 claims (3+ months) | -5% | Loyalty/low-risk bonus |
-| Predicted high-disruption week (weather model) | +12% | Forward-looking risk pricing |
+<div align="center">
 
-**Example:** Arjun (Standard Shield, Koramangala zone, July monsoon season):
+<table>
+  <thead>
+    <tr>
+      <th style="padding:8px; border:1px solid #ddd;">Risk Factor</th>
+      <th style="padding:8px; border:1px solid #ddd;">Adjustment</th>
+      <th style="padding:8px; border:1px solid #ddd;">Rationale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Monsoon season (Jun–Sep)</td>
+      <td style="padding:8px; border:1px solid #ddd;">+15%</td>
+      <td style="padding:8px; border:1px solid #ddd;">Higher disruption probability</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Worker's zone has flood history</td>
+      <td style="padding:8px; border:1px solid #ddd;">+10%</td>
+      <td style="padding:8px; border:1px solid #ddd;">Zone-level historical risk</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Worker's zone is flood-safe</td>
+      <td style="padding:8px; border:1px solid #ddd;">-8%</td>
+      <td style="padding:8px; border:1px solid #ddd;">Reward low-risk zones</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">New worker (&lt; 4 weeks)</td>
+      <td style="padding:8px; border:1px solid #ddd;">+5%</td>
+      <td style="padding:8px; border:1px solid #ddd;">Limited behavioral baseline</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Worker with 0 claims (3+ months)</td>
+      <td style="padding:8px; border:1px solid #ddd;">-5%</td>
+      <td style="padding:8px; border:1px solid #ddd;">Loyalty/low-risk bonus</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Predicted high-disruption week (weather model)</td>
+      <td style="padding:8px; border:1px solid #ddd;">+12%</td>
+      <td style="padding:8px; border:1px solid #ddd;">Forward-looking risk pricing</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+**Example:** Arjun (Standard Shield, Koramangala zone, July monsoon season):  
 `₹65 × 1.15 (monsoon) × 1.10 (flood-prone zone) = ₹82/week`
 
 ---
@@ -99,26 +171,102 @@ Q-Shield monitors **3 disruption categories** in real time using external APIs. 
 
 ### Trigger 1: Extreme Weather (Rain / Flood)
 
-| Parameter | Source | Threshold | Payout |
-|-----------|--------|-----------|--------|
-| Rainfall intensity | OpenWeather API | > 15mm/hr OR Red Alert issued | 50–100% of daily coverage |
-| Flood zone activation | IMD / mock civic API | Zone flagged as flooded | 100% of daily coverage |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th style="padding:8px; border:1px solid #ddd;">Parameter</th>
+      <th style="padding:8px; border:1px solid #ddd;">Source</th>
+      <th style="padding:8px; border:1px solid #ddd;">Threshold</th>
+      <th style="padding:8px; border:1px solid #ddd;">Payout</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Rainfall intensity</td>
+      <td style="padding:8px; border:1px solid #ddd;">OpenWeather API</td>
+      <td style="padding:8px; border:1px solid #ddd;">> 15mm/hr OR Red Alert issued</td>
+      <td style="padding:8px; border:1px solid #ddd;">50–100% of daily coverage</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Flood zone activation</td>
+      <td style="padding:8px; border:1px solid #ddd;">IMD / mock civic API</td>
+      <td style="padding:8px; border:1px solid #ddd;">Zone flagged as flooded</td>
+      <td style="padding:8px; border:1px solid #ddd;">100% of daily coverage</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 **Example:** IMD issues a Red Alert for Bengaluru South. All active Q-Shield workers in that zone receive an automatic payout notification within 10 minutes.
 
+---
+
 ### Trigger 2: Zone/Area Closure
 
-| Parameter | Source | Threshold | Payout |
-|-----------|--------|-----------|--------|
-| Curfew / Section 144 | Government API / mock | Zone closure confirmed | 80% of daily coverage |
-| Platform-side surge suspension | Mock platform API | Delivery suspension > 2 hrs | 60% of daily coverage |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th style="padding:8px; border:1px solid #ddd;">Parameter</th>
+      <th style="padding:8px; border:1px solid #ddd;">Source</th>
+      <th style="padding:8px; border:1px solid #ddd;">Threshold</th>
+      <th style="padding:8px; border:1px solid #ddd;">Payout</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Curfew / Section 144</td>
+      <td style="padding:8px; border:1px solid #ddd;">Government API / mock</td>
+      <td style="padding:8px; border:1px solid #ddd;">Zone closure confirmed</td>
+      <td style="padding:8px; border:1px solid #ddd;">80% of daily coverage</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Platform-side surge suspension</td>
+      <td style="padding:8px; border:1px solid #ddd;">Mock platform API</td>
+      <td style="padding:8px; border:1px solid #ddd;">Delivery suspension > 2 hrs</td>
+      <td style="padding:8px; border:1px solid #ddd;">60% of daily coverage</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+---
 
 ### Trigger 3: Severe Air Pollution
 
-| Parameter | Source | Threshold | Payout |
-|-----------|--------|-----------|--------|
-| AQI index | CPCB API / OpenAQ | AQI > 300 (Hazardous) | 50% of daily coverage |
-| AQI + heat index combined | Composite score | Score > threshold | 70% of daily coverage |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th style="padding:8px; border:1px solid #ddd;">Parameter</th>
+      <th style="padding:8px; border:1px solid #ddd;">Source</th>
+      <th style="padding:8px; border:1px solid #ddd;">Threshold</th>
+      <th style="padding:8px; border:1px solid #ddd;">Payout</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">AQI index</td>
+      <td style="padding:8px; border:1px solid #ddd;">CPCB API / OpenAQ</td>
+      <td style="padding:8px; border:1px solid #ddd;">AQI > 300 (Hazardous)</td>
+      <td style="padding:8px; border:1px solid #ddd;">50% of daily coverage</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">AQI + heat index combined</td>
+      <td style="padding:8px; border:1px solid #ddd;">Composite score</td>
+      <td style="padding:8px; border:1px solid #ddd;">Score > threshold</td>
+      <td style="padding:8px; border:1px solid #ddd;">70% of daily coverage</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 ---
 
@@ -142,16 +290,55 @@ Q-Shield monitors **3 disruption categories** in real time using external APIs. 
 
 ### 1. The Differentiation: Real Worker vs GPS Spoofer
 
-**Simple GPS verification is obsolete.** Q-Shield uses a **multi-signal verification stack** that cross-validates every claim against 6 independent signals simultaneously, making GPS spoofing alone completely ineffective.
+<p align="center">
+<b>Simple GPS verification is obsolete.</b> Q-Shield uses a <b>multi-signal verification stack</b> that cross-validates every claim against 6 independent signals simultaneously, making GPS spoofing alone completely ineffective.
+</p>
 
-| Signal | What We Check | Why It's Hard to Fake |
-|--------|--------------|----------------------|
-| **Coarse IP Location** | City/district from IP + carrier data | GPS can be faked; carrier cell-tower location cannot easily be spoofed remotely |
-| **Device Fingerprint** | OS version, screen resolution, dev mode status, rooted device flag | Spoofers typically use emulators or developer tools with detectable signatures |
-| **Network Stability Pattern** | WiFi vs mobile data, signal drop frequency | Real workers in a flood zone show unstable-but-consistent mobile data; a home spoofer shows stable WiFi |
-| **Weather Coherence** | API-reported weather at claimed location vs worker's claim | If the worker claims "heavy rain, zone A" but OpenWeather shows clear skies at that GPS coordinate — instant red flag |
-| **Trip History Consistency** | Historical delivery routes, average speed, zone frequency | Real workers have organic, consistent routes; GPS spoofers show unnatural teleportation or perfect grid patterns |
-| **Behavioral Velocity** | Time-delta between location pings vs physically possible travel speed | Claiming to be in two zones within an impossible timeframe is an automatic flag |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th style="padding:8px; border:1px solid #ddd;">Signal</th>
+      <th style="padding:8px; border:1px solid #ddd;">What We Check</th>
+      <th style="padding:8px; border:1px solid #ddd;">Why It's Hard to Fake</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;"><b>Coarse IP Location</b></td>
+      <td style="padding:8px; border:1px solid #ddd;">City/district from IP + carrier data</td>
+      <td style="padding:8px; border:1px solid #ddd;">GPS can be faked; carrier cell-tower location cannot easily be spoofed remotely</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;"><b>Device Fingerprint</b></td>
+      <td style="padding:8px; border:1px solid #ddd;">OS version, screen resolution, dev mode status, rooted device flag</td>
+      <td style="padding:8px; border:1px solid #ddd;">Spoofers typically use emulators or developer tools with detectable signatures</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;"><b>Network Stability Pattern</b></td>
+      <td style="padding:8px; border:1px solid #ddd;">WiFi vs mobile data, signal drop frequency</td>
+      <td style="padding:8px; border:1px solid #ddd;">Real workers in a flood zone show unstable-but-consistent mobile data; a home spoofer shows stable WiFi</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;"><b>Weather Coherence</b></td>
+      <td style="padding:8px; border:1px solid #ddd;">API-reported weather at claimed location vs worker's claim</td>
+      <td style="padding:8px; border:1px solid #ddd;">If the worker claims "heavy rain, zone A" but OpenWeather shows clear skies at that GPS coordinate — instant red flag</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;"><b>Trip History Consistency</b></td>
+      <td style="padding:8px; border:1px solid #ddd;">Historical delivery routes, average speed, zone frequency</td>
+      <td style="padding:8px; border:1px solid #ddd;">Real workers have organic, consistent routes; GPS spoofers show unnatural teleportation or perfect grid patterns</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;"><b>Behavioral Velocity</b></td>
+      <td style="padding:8px; border:1px solid #ddd;">Time-delta between location pings vs physically possible travel speed</td>
+      <td style="padding:8px; border:1px solid #ddd;">Claiming to be in two zones within an impossible timeframe is an automatic flag</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 **Scoring logic:**
 
@@ -168,11 +355,37 @@ fraud_score = (
 )
 ```
 
-| Fraud Score | Decision | % of Claims (estimated) |
-|-------------|----------|------------------------|
-| < 0.3 | Auto-approve + instant payout | ~70% |
-| 0.3 – 0.7 | Fast verification required | ~20% |
-| > 0.7 | Reject / manual review | ~10% |
+### Fraud Detection: Claim Scoring
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th style="padding:8px; border:1px solid #ddd;">Fraud Score</th>
+      <th style="padding:8px; border:1px solid #ddd;">Decision</th>
+      <th style="padding:8px; border:1px solid #ddd;">% of Claims (estimated)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">&lt; 0.3</td>
+      <td style="padding:8px; border:1px solid #ddd;">Auto-approve + instant payout</td>
+      <td style="padding:8px; border:1px solid #ddd;">~70%</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">0.3 – 0.7</td>
+      <td style="padding:8px; border:1px solid #ddd;">Fast verification required</td>
+      <td style="padding:8px; border:1px solid #ddd;">~20%</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">&gt; 0.7</td>
+      <td style="padding:8px; border:1px solid #ddd;">Reject / manual review</td>
+      <td style="padding:8px; border:1px solid #ddd;">~10%</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 ---
 
@@ -235,18 +448,63 @@ A Bengaluru delivery worker in an actual flood faces real compounding problems: 
 
 ---
 
-## Tech Stack
+### Tech Stack
 
-| Layer | Technology | Rationale |
-|-------|-----------|-----------|
-| Frontend | Next.js 15 (React + TypeScript) | PWA support, fast rendering, easy Vercel deploy |
-| Backend API | Node.js + Express (TypeScript) | Familiar, fast to build, good ecosystem |
-| ML Service | Python + FastAPI + scikit-learn | Isolated ML service, easy to iterate model |
-| Database | PostgreSQL (Supabase) | Reliable, free tier, real-time subscriptions |
-| Weather Data | OpenWeather API | Free tier, reliable, covers Indian cities well |
-| Pollution Data | OpenAQ API | Free, covers Bengaluru AQI stations |
-| Maps / Zones | Mapbox GL JS | Free tier sufficient for zone visualisation |
-| Deployment | Vercel (frontend) + Railway (API + ML) | Free tiers, auto-deploy from GitHub |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th style="padding:8px; border:1px solid #ddd;">Layer</th>
+      <th style="padding:8px; border:1px solid #ddd;">Technology</th>
+      <th style="padding:8px; border:1px solid #ddd;">Rationale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Frontend</td>
+      <td style="padding:8px; border:1px solid #ddd;">Next.js 15 (React + TypeScript)</td>
+      <td style="padding:8px; border:1px solid #ddd;">PWA support, fast rendering, easy Vercel deploy</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Backend API</td>
+      <td style="padding:8px; border:1px solid #ddd;">Node.js + Express (TypeScript)</td>
+      <td style="padding:8px; border:1px solid #ddd;">Familiar, fast to build, good ecosystem</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">ML Service</td>
+      <td style="padding:8px; border:1px solid #ddd;">Python + FastAPI + scikit-learn</td>
+      <td style="padding:8px; border:1px solid #ddd;">Isolated ML service, easy to iterate model</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Database</td>
+      <td style="padding:8px; border:1px solid #ddd;">PostgreSQL (Supabase)</td>
+      <td style="padding:8px; border:1px solid #ddd;">Reliable, free tier, real-time subscriptions</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Weather Data</td>
+      <td style="padding:8px; border:1px solid #ddd;">OpenWeather API</td>
+      <td style="padding:8px; border:1px solid #ddd;">Free tier, reliable, covers Indian cities well</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Pollution Data</td>
+      <td style="padding:8px; border:1px solid #ddd;">OpenAQ API</td>
+      <td style="padding:8px; border:1px solid #ddd;">Free, covers Bengaluru AQI stations</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Maps / Zones</td>
+      <td style="padding:8px; border:1px solid #ddd;">Mapbox GL JS</td>
+      <td style="padding:8px; border:1px solid #ddd;">Free tier sufficient for zone visualisation</td>
+    </tr>
+    <tr>
+      <td style="padding:8px; border:1px solid #ddd;">Deployment</td>
+      <td style="padding:8px; border:1px solid #ddd;">Vercel (frontend) + Railway (API + ML)</td>
+      <td style="padding:8px; border:1px solid #ddd;">Free tiers, auto-deploy from GitHub</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 ---
 
@@ -263,3 +521,9 @@ We chose a **Progressive Web App (PWA)** over a native mobile app for the follow
 
 *Built for India's last-mile workforce.*  
 *DEVTrails 2026 | Team Q-Shield*
+
+
+
+
+
+
