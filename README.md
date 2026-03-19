@@ -17,10 +17,10 @@
 8. [Adversarial Defense & Anti-Spoofing Strategy](#adversarial-defense--anti-spoofing-strategy)
 9. [Architecture Overview](#architecture-overview)
 10. [Tech Stack](#tech-stack)
-11. [Development Plan](#development-plan)
-12. [Platform Choice: Web (PWA)](#platform-choice-web-pwa)
+11. [Platform Choice: Web (PWA)](#platform-choice-web-pwa)
 
 ---
+
 
 ## The Problem
 
@@ -124,72 +124,15 @@ Q-Shield monitors **3 disruption categories** in real time using external APIs. 
 
 ## Application Workflow
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  ONBOARDING (5 min)                                         │
-│  Worker registers → uploads platform ID + Aadhaar           │
-│  ML engine builds risk profile → generates weekly quote     │
-│  Worker selects tier → pays via UPI/wallet                  │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-┌──────────────────────────▼──────────────────────────────────┐
-│  ACTIVE COVERAGE                                            │
-│  System monitors OpenWeather + AQI + Zone APIs 24/7         │
-│  Worker app shows: active coverage, zone risk level,        │
-│  current weather alerts                                     │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-┌──────────────────────────▼──────────────────────────────────┐
-│  DISRUPTION DETECTED                                        │
-│  Parametric trigger fires → claim auto-initiated            │
-│  ML fraud engine scores claim (<10 seconds)                 │
-│  Score < 0.3 → Auto-approve + instant payout               │
-│  Score 0.3–0.7 → Fast verification (OTP + GPS retry)        │
-│  Score > 0.7 → Manual review queue                         │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-┌──────────────────────────▼──────────────────────────────────┐
-│  PAYOUT                                                     │
-│  UPI / wallet transfer within 15 minutes of approval        │
-│  Worker notified via push + SMS                             │
-│  Claim logged to history for future risk modeling           │
-└─────────────────────────────────────────────────────────────┘
-```
+![application-workflow](https://github.com/user-attachments/assets/69d7c33d-e64a-4c5e-8139-25eb0530efb1)
+
 
 ---
 
 ## AI/ML Integration Plan
 
-### 1. Risk Scoring (Premium Calculation)
+<img width="1169" height="451" alt="AI-System" src="https://github.com/user-attachments/assets/6cdf9aef-6ecb-4d18-89b4-5ade6daacc9d" />
 
-**Model:** Gradient Boosted Tree (scikit-learn / XGBoost)  
-**Input features:**
-- Worker's delivery zone (encoded)
-- Historical weather disruption frequency per zone
-- Worker's delivery hours and tenure
-- Season / month
-- Platform type (q-commerce vs food vs e-commerce)
-
-**Output:** Risk multiplier (0.8x – 1.3x) applied to base premium  
-**Training data:** Synthetic data (Phase 1) → real claims data (Phase 2+)
-
-### 2. Fraud Detection (Claim Scoring)
-
-**Model:** Weighted multi-signal scoring + DBSCAN cluster detection  
-**Input signals:**
-- GPS coordinates vs weather API zone match
-- Device fingerprint (emulator detection)
-- Network stability pattern
-- Behavioral velocity (movement speed checks)
-- Temporal + spatial claim clustering
-
-**Output:** Fraud score (0–1) → auto-approve / flag / reject  
-**See full detail:** [Adversarial Defense section below](#adversarial-defense--anti-spoofing-strategy)
-
-### 3. Predictive Weather Risk (Phase 2)
-
-**Model:** Time-series regression on historical IMD data  
-**Purpose:** Forward-looking premium adjustment (predicting risky weeks)
 
 ---
 
@@ -233,32 +176,27 @@ fraud_score = (
 
 ---
 
+
 ### 2. The Data: Detecting Coordinated Fraud Rings
 
-The 500-worker syndicate scenario is not isolated fraud — it is **coordinated collusion**. Individual fraud scores may look borderline acceptable. Ring detection catches what individual scoring misses.
+**500-worker syndicates** evade individual fraud scores. *Ring detection catches collusion.*
 
-**Data points analyzed beyond GPS:**
+### Key Signals (Beyond GPS)
+- **Temporal clustering:** 50+ claims/zone in 15 min *(normal: 0–2)*
+- **Shared fingerprints:** Same OS/screen/carrier across accounts
+- **IP overlap:** Same subnet claims city-wide disruption
+- **Onboarding spikes:** 50+ accounts in 72 hrs
+- **Claim velocity:** 10× historical baseline/zone
 
-- **Temporal clustering:** Multiple workers claiming disruption in the same zone within a 15-minute window. Normal baseline: 0–2 claims. Syndicate pattern: 50+ claims simultaneously.
-- **Shared device fingerprint buckets:** Same OS version + screen size + carrier combination across many accounts signals coordinated device provisioning.
-- **IP range overlap:** Multiple claims originating from the same subnet or ISP block in a residential area while claiming to be across the city.
-- **Onboarding spike detection:** 50+ new accounts registered in the same locality within 72 hours is flagged as a potential ring pre-staging.
-- **Claim velocity per zone:** Each zone has a historical baseline of claims per disruption event. Statistical outliers (e.g., 10× baseline) trigger ring-level review.
-
-**Implementation — DBSCAN Cluster Detection:**
-
+### DBSCAN Cluster Detection
 ```python
-# Pseudocode: Ring detection logic
-claims_window = get_claims(zone=X, time_bucket=T)  # 15-min window
+claims = get_claims(zone=X, time_bucket="15min")
 
-if len(claims_window) > CLUSTER_THRESHOLD:          # e.g., 10+ claims
-    avg_fraud_score = mean([c.fraud_score for c in claims_window])
-    shared_device_ratio = count_shared_fingerprints(claims_window)
-    
-    if avg_fraud_score > 0.4 OR shared_device_ratio > 0.3:
-        flag_as_ring(claims_window)
-        suspend_payouts(zone=X, duration="pending_review")
-        alert_admin_dashboard()
+if len(claims) > 10:
+    if mean_fraud(claims) > 0.4 or shared_devices(claims) > 0.3:
+        flag_ring(claims)
+        suspend_payouts(zone=X)
+        alert_admin()
 ```
 
 **Real scenario:** 500 workers claiming "flood in Koramangala" at 8:47 PM while OpenWeather API shows clear skies → weather coherence score spikes to 0.95 for all claims → ring flag triggers immediately → entire batch suspended within seconds.
@@ -271,27 +209,8 @@ A Bengaluru delivery worker in an actual flood faces real compounding problems: 
 
 **Q-Shield's progressive verification flow ensures honest workers are never unfairly penalized:**
 
-```
-Claim submitted
-│
-├── Fraud Score < 0.3
-│   └── Auto-approve → payout in <15 min
-│       (No action required from worker)
-│
-├── Fraud Score 0.3 – 0.7
-│   └── Fast Verification (max 5 minutes total)
-│       ├── Push notification: "Confirm you're safe — tap to verify"
-│       ├── One-tap OTP confirmation
-│       └── Optional: retry GPS ping + accelerometer (proves stationary)
-│           └── On pass → approve
-│           └── On fail → escalate to manual
-│
-└── Fraud Score > 0.7
-    └── Manual Review Queue
-        ├── Admin dashboard surfaces the claim with all signal breakdown
-        ├── Optional LLM analyst summarizes anomalies
-        └── Human reviewer approves / rejects within 2 hours
-```
+<img width="551" height="338" alt="Screenshot 2026-03-19 at 3 42 38 PM" src="https://github.com/user-attachments/assets/b170ff6e-9154-45a8-bcdc-b86208ba0ec2" />
+
 
 **Key fairness principles baked into the system:**
 
@@ -305,37 +224,8 @@ Claim submitted
 
 ## Architecture Overview
 
-```
-┌─────────────────┐       ┌──────────────────────────────┐
-│   Worker App    │──────▶│     Next.js Frontend (PWA)   │
-│ (Mobile / Web)  │       │  Worker Portal + Admin View  │
-└─────────────────┘       └──────────────┬───────────────┘
-                                         │
-                          ┌──────────────▼───────────────┐
-                          │    Node.js / Express API     │
-                          │  - Policy management          │
-                          │  - Claim processing           │
-                          │  - Trigger monitoring         │
-                          │  - External API calls         │
-                          └──────┬───────────┬────────────┘
-                                 │           │
-               ┌─────────────────▼──┐   ┌───▼────────────────┐
-               │  PostgreSQL DB     │   │  Python ML Service │
-               │  - Worker profiles │   │  (FastAPI)         │
-               │  - Policies        │   │  - Risk scoring    │
-               │  - Claims          │   │  - Fraud detection │
-               │  - Payouts         │   │  - Ring detection  │
-               └────────────────────┘   └────────────────────┘
-                                                │
-                          ┌─────────────────────▼────────────┐
-                          │        External Data Sources     │
-                          │  - OpenWeather API               │
-                          │  - OpenAQ (pollution data)       │
-                          │  - Mapbox (zone mapping)         │
-                          │  - Mock Platform API             │
-                          │  - Mock Payment Gateway (UPI)    │
-                          └──────────────────────────────────┘
-```
+![WhatsApp Image 2026-03-19 at 3 38 01 PM](https://github.com/user-attachments/assets/f4599732-5bf8-4de5-a50e-ee6015cb0962)
+
 
 **Core data flows:**
 1. **Onboarding:** Worker registers → ML service risk-scores profile → weekly premium quote generated → policy created on payment.
@@ -357,36 +247,6 @@ Claim submitted
 | Pollution Data | OpenAQ API | Free, covers Bengaluru AQI stations |
 | Maps / Zones | Mapbox GL JS | Free tier sufficient for zone visualisation |
 | Deployment | Vercel (frontend) + Railway (API + ML) | Free tiers, auto-deploy from GitHub |
-
----
-
-## Development Plan
-
-### Phase 1 (Current — March 20): Ideation & Foundation
-- [x] Persona definition and use case research
-- [x] Architecture design
-- [x] Weekly premium model defined
-- [x] Parametric triggers defined
-- [x] Anti-spoofing strategy designed
-- [ ] GitHub repo + this README
-- [ ] Minimal prototype (Next.js landing + 2 API endpoints)
-- [ ] 2-minute strategy video
-
-### Phase 2 (March 21 – April 4): Automation & Protection
-- Worker onboarding flow (full UI)
-- Policy creation + weekly premium payment (mock UPI)
-- Dynamic premium calculation (ML model integrated)
-- 3–5 automated parametric triggers (live API calls)
-- Claims management UI
-- Basic fraud scoring endpoint live
-
-### Phase 3 (April 5 – 17): Scale & Optimise
-- Advanced fraud detection (DBSCAN ring detection live)
-- Instant payout simulation (Razorpay test mode)
-- Worker dashboard (earnings protected, active coverage)
-- Admin/insurer dashboard (loss ratios, predictive analytics)
-- Full demo video (simulated rainstorm → auto claim → payout)
-- Final pitch deck
 
 ---
 
