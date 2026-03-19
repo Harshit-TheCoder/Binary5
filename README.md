@@ -390,7 +390,7 @@ Claim submitted
 ---
 
 ## Tech Stack
-
+<!-- 
 | Layer | Technology | Rationale |
 |-------|-----------|-----------|
 | Frontend | Next.js 15 (React + TypeScript) | PWA support, fast rendering, easy Vercel deploy |
@@ -400,9 +400,20 @@ Claim submitted
 | Weather Data | OpenWeather API | Free tier, reliable, covers Indian cities well |
 | Pollution Data | OpenAQ API | Free, covers Bengaluru AQI stations |
 | Maps / Zones | Mapbox GL JS | Free tier sufficient for zone visualisation |
-| Deployment | Vercel (frontend) + Railway (API + ML) | Free tiers, auto-deploy from GitHub |
+| Deployment | Vercel (frontend) + Railway (API + ML) | Free tiers, auto-deploy from GitHub | -->
 
+## ⚙️ Tech Stack
 
+| 🧩 Layer | 🚀 Technology | 💡 Why We Chose It |
+|----------|-------------|-------------------|
+| 🎨 **Frontend** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="20"/> Next.js 15 <br> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="20"/> React <br> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="20"/> TypeScript | PWA support, fast rendering, seamless Vercel deploy |
+| ⚡ **Backend API** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="20"/> Node.js <br> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" width="20"/> Express | Fast to build, scalable, strong ecosystem |
+| 🤖 **ML Service** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="20"/> Python <br> ⚡ FastAPI <br> 🤖 scikit-learn | Isolated ML service, easy model iteration |
+| 🗄️ **Database** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="20"/> PostgreSQL <br> ⚡ Supabase | Reliable, real-time subscriptions, free tier |
+| 🌦️ **Weather Data** | ☁️ OpenWeather API | Free tier, reliable, strong India coverage |
+| 🌫️ **Pollution Data** | 🌍 OpenAQ API | Free AQI data, Bengaluru coverage |
+| 🗺️ **Maps / Zones** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mapbox/mapbox-original.svg" width="20"/> Mapbox GL JS | Efficient zone visualization |
+| 🚀 **Deployment** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" width="20"/> Vercel <br> 🚆 Railway | Auto-deploy, fast CI/CD |
 ---
 
 ## Platform Choice: Web (PWA)
