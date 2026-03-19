@@ -389,7 +389,6 @@ Claim submitted
 
 ---
 
-## Tech Stack
 <!-- 
 | Layer | Technology | Rationale |
 |-------|-----------|-----------|
