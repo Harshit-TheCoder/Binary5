@@ -29,9 +29,39 @@ When orders stop, earnings stop. There is no employer backup, no union protectio
 <p align="center">
   <img width="856" height="384" alt="Screenshot 2026-03-19 at 10 24 05 PM" src="https://github.com/user-attachments/assets/1abb22ba-d7cb-482a-b46a-76de916c4679" />
 </p>
- 
- **The Opportunity:** 2M q-commerce workers × ₹100/week premium = ₹10,400Cr annual market
- 
+
+**India's quick commerce riders are exploding** – but unprotected:
+
+**Market:** 550K workers × ₹80/week × 52 weeks = **₹2,300Cr annual opportunity**
+<table align="center">
+  <tr>
+    <th align="center">Year</th>
+    <th align="center">Headline</th>
+    <th align="center">Workers</th>
+    <th align="center">Source</th>
+  </tr>
+  <tr>
+    <td align="center"><b>2025</b></td>
+    <td align="center"><b>Q-Commerce hits 5.5 lakh workers</b></td>
+    <td align="center"><b>550,000</b></td>
+    <td align="center">
+      <a href="https://economictimes.com/jobs/fresher/q-commerce-to-employ-5-5-5-lakh-people-by-next-year-report/articleshow/118941542.cms">
+        Economic Times
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><b>2026</b></td>
+    <td align="center"><b>Gig hiring surges as qcom expands</b></td>
+    <td align="center"><b>~1M new jobs</b></td>
+    <td align="center">
+      <a href="https://www.business-standard.com/economy/news/jobs-gig-hiring-to-surge-in-2026-as-qcom-ecom-expand-beyond-metros-126020800403_1.html">
+        Business Standard
+      </a>
+    </td>
+  </tr>
+</table>
+
 ---
 ## Our Persona
 
