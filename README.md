@@ -65,24 +65,60 @@ When orders stop, earnings stop. There is no employer backup, no union protectio
 ---
 ## Our Persona
 
-### Arjun, 26 — Zepto Delivery Partner, Bengaluru
+Arjun, 26 — Zepto Delivery Partner, Bengaluru
 
-<div align="center">
+<table align="center">
+  <tr align="center">
+    <th>Attribute</th>
+    <th>Detail</th>
+  </tr>
+  <tr align="center">
+    <td>Platform</td>
+    <td>Zepto (primary), Blinkit (secondary)</td>
+  </tr>
+  <tr align="center">
+    <td>City</td>
+    <td>Bengaluru (Koramangala, HSR Layout, Indiranagar)</td>
+  </tr>
+  <tr align="center">
+    <td>Weekly Earnings</td>
+    <td>₹4,500 – ₹6,000</td>
+  </tr>
+  <tr align="center">
+    <td>Work Hours</td>
+    <td>8–10 hrs/day, 6 days/week</td>
+  </tr>
+  <tr align="center">
+    <td>Vehicle</td>
+    <td>Electric two-wheeler</td>
+  </tr>
+  <tr align="center">
+    <td>Risk Exposure</td>
+    <td>Monsoon floods, traffic restrictions, AQI spikes (Oct–Nov)</td>
+  </tr>
+</table>
 
-| Attribute | Detail |
-|-----------|--------|
-| Platform | Zepto (primary), Blinkit (secondary) |
-| City | Bengaluru (operates across Koramangala, HSR Layout, Indiranagar) |
-| Weekly Earnings | ₹4,500 – ₹6,000 |
-| Work Hours | 8–10 hrs/day, 6 days/week |
-| Vehicle | Electric two-wheeler |
-| Risk Exposure | Bengaluru monsoon floods, traffic lockdowns, AQI spikes (Oct–Nov) |
 
-</div>
+### The Scenario That Breaks Arjun
 
-**The scenario that breaks Arjun:**
+- It’s a rainy Tuesday in Bengaluru. A red alert is issued and deliveries stop. Arjun is online, but the app goes silent.
+- No orders come in. In a few hours, he loses ₹800–₹1,200.
+- This happens often — around 6–8 times every monsoon.
+- One bad week like this can cut 20–30% of his income.
+- And it’s not just rain — outages, strikes, or policy changes can also leave him working but earning nothing.
 
-It's a Tuesday evening in July. Heavy rain triggers a red alert in 3 zones. Orders are suspended by the platform. Arjun loses ₹800–₹1,200 that day — with no recourse. This happens 6–8 times per monsoon season. Q-Shield pays out automatically, within minutes, with no claim form required.
+### This Isn’t Hypothetical — It’s Already Happening
+
+ **Nationwide gig worker strikes** have halted deliveries across cities, with up to **200,000 riders participating**  
+  https://www.cnn.com/2026/01/01/india/india-gig-workers-delivery-strike-intl-hnk  
+
+ Workers report **mass cancellations, penalties, and unrealistic SLAs** wiping out daily earnings  
+  https://www.telegraphindia.com/my-kolkata/lifestyle/behind-the-10-minute-promise-what-swiggy-instamart-zomato-blinkit-zepto-delivery-partners-face/cid/2142802  
+
+ Platforms face pressure to **slow down 10-minute delivery models**, directly impacting order volumes  
+  https://economictimes.com/industry/services/retail/indias-10-minute-delivery-model-is-under-pressure/articleshow/126404793.cms  
+
+Arjun’s “bad day” is part of a **system-wide pattern**.
 
 ---
 
@@ -94,6 +130,9 @@ Q-Shield is a **parametric income insurance platform** — meaning payouts are t
 - Lost earnings due to weather disruptions
 - Lost earnings due to zone/area closures or curfews
 - Lost earnings due to severe pollution (AQI > 300)
+- Lost earnings due to platform outages or system failures
+- Lost earnings due to labour actions (e.g., city-wide strikes impacting order flow)
+- Lost earnings due to regulatory interventions affecting platform operations
 - Vehicle repairs (excluded)
 - Health/accident/life insurance (excluded)
 
