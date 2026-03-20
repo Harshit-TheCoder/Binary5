@@ -1,4 +1,4 @@
-# Q-Shield: AI-Powered Parametric Income Insurance for Q-Commerce Delivery Workers
+# Dhanrakshak : AI-Powered Parametric Income Insurance for Q-Commerce Delivery Workers
 
 > **Guidewire DEVTrails 2026 | Phase 1 Submission**  
 > Protecting the last-mile workforce — one week at a time.
@@ -14,7 +14,7 @@
 5. [Parametric Triggers](#parametric-triggers)
 6. [Application Workflow](#application-workflow)
 7. [AI/ML Integration Plan](#aiml-integration-plan)
-8. [Adversarial Defense & Anti-Spoofing Strategy](#adversarial-defense--anti-spoofing-strategy)
+8. [Adversarial Defense & Anti-Spoofing Strategy](#adversarial-defence--anti-spoofing-strategy)
 9. [Architecture Overview](#architecture-overview)
 10. [Tech Stack](#tech-stack)
 11. [Platform Choice: Web (PWA)](#platform-choice-web-pwa)
@@ -124,7 +124,7 @@ Arjun’s “bad day” is part of a **system-wide pattern**.
 
 ## Solution Overview
 
-Q-Shield is a **parametric income insurance platform** — meaning payouts are triggered by verifiable external events (weather, zone status, pollution data), not subjective loss assessments. No paperwork. No adjuster. No waiting.
+Dhanrakshak is a **parametric income insurance platform** — meaning payouts are triggered by verifiable external events (weather, zone status, pollution data), not subjective loss assessments. No paperwork. No adjuster. No waiting.
 
 **Coverage scope (strictly income loss only):**
 - Lost earnings due to weather disruptions
@@ -236,7 +236,7 @@ The base premium is adjusted weekly by our ML risk engine based on:
 
 ## Parametric Triggers
 
-Q-Shield monitors **3 disruption categories** in real time using external APIs. When a threshold is crossed in a worker's active delivery zone, a claim is initiated automatically — no worker action required.
+Dhanrakshak monitors **3 disruption categories** in real time using external APIs. When a threshold is crossed in a worker's active delivery zone, a claim is initiated automatically — no worker action required.
 
 ### Trigger 1: Extreme Weather (Rain / Flood)
 
@@ -269,7 +269,7 @@ Q-Shield monitors **3 disruption categories** in real time using external APIs. 
 
 </div>
 
-**Example:** IMD issues a Red Alert for Bengaluru South. All active Q-Shield workers in that zone receive an automatic payout notification within 10 minutes.
+**Example:** IMD issues a Red Alert for Bengaluru South. All active Dhanrakshak workers in that zone receive an automatic payout notification within 10 minutes.
 
 ---
 
@@ -475,7 +475,7 @@ Q-Shield monitors **3 disruption categories** in real time using external APIs. 
 ### Real Worker vs GPS Spoofer
 
 **Single-signal verification (GPS) is obsolete.**  
-Q-Shield validates every claim using **6 independent signals simultaneously**.
+Dhanrakshak validates every claim using **6 independent signals simultaneously**.
 
 <table align="center">
   <tr align="center">
@@ -639,7 +639,7 @@ Fraud doesn’t scale randomly. It scales in **coordinated patterns**.
 
 A Bengaluru delivery worker in an actual flood faces real compounding problems: poor GPS signal near dark stores, unstable 4G in waterlogged zones, and legitimate location anomalies (taking shelter in a different zone than their delivery route).
 
-**Q-Shield's progressive verification flow ensures honest workers are never unfairly penalized:**
+**Dhanrakshak's progressive verification flow ensures honest workers are never unfairly penalized:**
 
 <p align="center">
   <img width="551" height="338" alt="Screenshot 2026-03-19 at 3 42 38 PM" src="https://github.com/user-attachments/assets/b170ff6e-9154-45a8-bcdc-b86208ba0ec2" />
@@ -731,7 +731,7 @@ A Bengaluru delivery worker in an actual flood faces real compounding problems: 
 
 We chose a **Progressive Web App (PWA)** over a native mobile app for the following reasons:
 
-1. **Zero install friction** — delivery workers can access Q-Shield via a link in WhatsApp without going to the app store. Adoption is everything.
+1. **Zero install friction** — delivery workers can access Dhanrakshak via a link in WhatsApp without going to the app store. Adoption is everything.
 2. **Works on low-end Android devices** — the majority of q-commerce workers use budget Android phones. A PWA with offline support handles poor network conditions better than a heavy native app.
 3. **Faster to build and iterate** — one codebase (Next.js) serves both mobile web and desktop (admin view), maximising our small team's velocity.
 4. **Push notifications supported** — PWAs on Android support push notifications, enabling real-time claim alerts to workers.
@@ -739,7 +739,7 @@ We chose a **Progressive Web App (PWA)** over a native mobile app for the follow
 ---
 
 *Built for India's last-mile workforce.*  
-*DEVTrails 2026 | Team Q-Shield*
+*DEVTrails 2026 | Team Dhanrakshak*
 
 
 
