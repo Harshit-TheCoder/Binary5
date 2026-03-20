@@ -300,6 +300,118 @@ Q-Shield monitors **3 disruption categories** in real time using external APIs. 
 
 ---
 
+### Trigger 4: Gig Worker Strikes
+<table align="center">
+  <tr align="center">
+    <th>Parameter</th>
+    <th>Source</th>
+    <th>Threshold</th>
+    <th>Payout</th>
+  </tr>
+  <tr align="center">
+    <td>Union-declared strike</td>
+    <td><a href="https://www.cnn.com/2026/01/01/india/india-gig-workers-delivery-strike-intl-hnk">CNN: 200K+ workers</a></td>
+    <td>IFAT declares city strike</td>
+    <td>70% daily</td>
+  </tr>
+  <tr align="center">
+    <td>Order volume crash</td>
+    <td><a href="https://timesofindia.indiatimes.com/city/hyderabad/remove-10-minute-delivery-option-gig-workers-launch-nationwide-strike-on-new-...">TOI: Nationwide strike</a></td>
+    <td>&gt;50% drop (6+ hrs)</td>
+    <td>60% daily</td>
+  </tr>
+</table>
+
+---
+
+### Trigger 5: Regulatory & Policy Shocks
+<table align="center">
+  <tr align="center">
+    <th>Parameter</th>
+    <th>Source</th>
+    <th>Threshold</th>
+    <th>Payout</th>
+  </tr>
+  <tr align="center">
+    <td>Government directive impact</td>
+    <td><a href="https://economictimes.com/industry/services/retail/indias-10-minute-delivery-model-is-under-pressure/articleshow/126404793.cms">ET: 10-min delivery pressure</a></td>
+    <td>&gt;30% drop in active slots/orders</td>
+    <td>60% daily</td>
+  </tr>
+  <tr align="center">
+    <td>Safety regulation slowdown</td>
+    <td><a href="https://economictimes.com/industry/services/retail/indias-10-minute-delivery-model-is-under-pressure/articleshow/126404793.cms">ET: Safety mandates</a></td>
+    <td>Avg delivery time &gt;40% (city-wide)</td>
+    <td>50% daily</td>
+  </tr>
+</table>
+
+---
+
+### Trigger 6: Platform & System Failures
+<table align="center">
+  <tr align="center">
+    <th>Parameter</th>
+    <th>Source</th>
+    <th>Threshold</th>
+    <th>Payout</th>
+  </tr>
+  <tr align="center">
+    <td>Platform-wide outage</td>
+    <td>-</td>
+    <td>App downtime &gt;30 mins (city/zone)</td>
+    <td>50% daily</td>
+  </tr>
+  <tr align="center">
+    <td>Payment system failure</td>
+    <td>-</td>
+    <td>Settlement failure &gt;2 hrs</td>
+    <td>40% daily</td>
+  </tr>
+  <tr align="center">
+    <td>Mass cancellations spike</td>
+    <td><a href="https://www.telegraphindia.com/my-kolkata/lifestyle/behind-the-10-minute-promise-what-swiggy-instamart-zomato-blinkit-zepto-delivery-partners-face/cid/2142802">Telegraph: SLA pressure</a></td>
+    <td>&gt;40% cancel rate (zone-wide)</td>
+    <td>40% daily</td>
+  </tr>
+</table>
+
+ ---
+ 
+### Trigger 7: Income Shock Stabilizers *(AI-driven)*
+<table align="center">
+  <tr align="center">
+    <th>Parameter</th>
+    <th>Source</th>
+    <th>Threshold</th>
+    <th>Payout</th>
+  </tr>
+  <tr align="center">
+    <td>Per-order payout cut</td>
+    <td><a href="https://frontierweekly.com/articles/vol-58/58-34/58-34-Gig%20Workers%20Recent%20Strikes.html">Frontier: Pay cuts</a></td>
+    <td>&gt;25% drop (weekly)</td>
+    <td>Top-up 30%</td>
+  </tr>
+  <tr align="center">
+    <td>Incentive collapse</td>
+    <td><a href="https://tiss.ac.in/uploads/files/Online_Food_Delivery_Platform_syz696J.pdf">TISS Study</a></td>
+    <td>&gt;2σ drop vs 3-mo avg</td>
+    <td>Top-up 25%</td>
+  </tr>
+  <tr align="center">
+    <td>Fuel price spike</td>
+    <td><a href="https://www.jetir.org/papers/JETIRHB06021.pdf">JETIR Study</a></td>
+    <td>&gt;10% weekly increase</td>
+    <td>Adjust income floor</td>
+  </tr>
+</table>
+
+---
+
+**Sources:** [CNN](https://www.cnn.com/2026/01/01/india/india-gig-workers-delivery-strike-intl-hnk) | [Times of India](https://timesofindia.indiatimes.com/city/hyderabad/remove-10-minute-delivery-option-gig-workers-launch-nationwide-strike-on-new-...) | [NDTV](https://www.ndtv.com/india-news/gig-workers-strike-on-december-31-potential-impact-on-new-year-celebrations-10103344) | [Economic Times](https://economictimes.com/tech/technology/gig-workers-strike-revives-debate-on-10-minute-delivery/articleshow/126310183.cms)
+
+---
+
 ## Application Workflow
 
 ![application-workflow](https://github.com/user-attachments/assets/69d7c33d-e64a-4c5e-8139-25eb0530efb1)
