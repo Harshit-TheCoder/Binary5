@@ -1,6 +1,6 @@
 # Dhanrakshak : AI-Powered Parametric Income Insurance for Q-Commerce Delivery Workers
 
-> **Guidewire DEVTrails 2026 | Phase 1 Submission**  
+> **Guidewire DEVTrails 2026 | Phase 2 Submission**  
 > Protecting the last-mile workforce — one week at a time.
 
 ---
